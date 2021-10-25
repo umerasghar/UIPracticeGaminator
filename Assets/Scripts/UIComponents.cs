@@ -19,6 +19,8 @@ public class UIComponents
     public Slider sliderz;
     public Toggle slidertoggle;
     public Toggle scrollreacttoggle;
+    public ScrollRect scrollrect;
+    public Dropdown colordropdown;
     [Header("Panels/Screens")]
     public GameObject LayoutPanel;
     public GameObject MainPanel;

@@ -6,10 +6,11 @@ public class UIManager : MonoBehaviour
 {
     public UIComponents components;
     public GameObject sphere;
+    Material spherematerial;
     // Start is called before the first frame update
     void Start()
     {
-        
+        spherematerial = sphere.GetComponent<Renderer>().material;
     }
 
     // Update is called once per frame
@@ -45,11 +46,13 @@ public class UIManager : MonoBehaviour
         if (components.slidertoggle.isOn)
         {
             components.renderview.gameObject.SetActive(true);
+            components.colordropdown.interactable = true;
             components.scrollreacttoggle.isOn = false;
         }
         else
         {
             components.renderview.gameObject.SetActive(false);
+            components.colordropdown.interactable = false;
         }
     }
     public void scrollReactToggle()
@@ -57,12 +60,29 @@ public class UIManager : MonoBehaviour
 
         if (components.scrollreacttoggle.isOn)
         {
-           // components.renderview.gameObject.SetActive(true);
+           components.scrollrect.gameObject.SetActive(true);
             components.slidertoggle.isOn = false;
         }
         else
         {
-           
+            components.scrollrect.gameObject.SetActive(false);
+        }
+    }
+    public void changecolor()
+    {
+        string option = components.colordropdown.itemText.text;
+        switch (option)
+        {
+            case "Red":
+                spherematerial.color = Color.red;
+                break;
+            case "Green":
+                spherematerial.color = Color.green;
+                break;
+            case "Blue":
+                spherematerial.color = Color.blue;
+                break;
+
         }
     }
 }
