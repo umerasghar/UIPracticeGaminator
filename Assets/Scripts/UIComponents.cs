@@ -7,18 +7,19 @@ using System;
 [Serializable]
 public class UIComponents 
 {
-    [Header ("Buttons")]
-    public Button bttn;
-    [Header("Images")]
+    [Header("UI components")]
+    public Button pressbtn;
     public Image img;
-    [Header("Input")]
+    public RawImage renderview;
     public InputField input;
-    [Header("Text")]
     public Text txt;
-    [Header("Scroll")]
     public ScrollRect scroll;
-    [Header("Slider")]
-    public Slider slider;
-    [Header("Toggle")]
-    public Toggle toggle;
+    public Slider sliderx;
+    public Slider slidery;
+    public Slider sliderz;
+    public Toggle slidertoggle;
+    public Toggle scrollreacttoggle;
+    [Header("Panels/Screens")]
+    public GameObject LayoutPanel;
+    public GameObject MainPanel;
 }
